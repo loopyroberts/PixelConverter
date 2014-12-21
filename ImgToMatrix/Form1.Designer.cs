@@ -41,13 +41,13 @@
             // 
             this.imageBox.Location = new System.Drawing.Point(3, 4);
             this.imageBox.Name = "imageBox";
-            this.imageBox.Size = new System.Drawing.Size(509, 60);
+            this.imageBox.Size = new System.Drawing.Size(515, 288);
             this.imageBox.TabIndex = 0;
             this.imageBox.TabStop = false;
             // 
             // nameBox
             // 
-            this.nameBox.Location = new System.Drawing.Point(93, 103);
+            this.nameBox.Location = new System.Drawing.Point(93, 331);
             this.nameBox.Name = "nameBox";
             this.nameBox.Size = new System.Drawing.Size(362, 20);
             this.nameBox.TabIndex = 1;
@@ -55,7 +55,7 @@
             // 
             // openBut
             // 
-            this.openBut.Location = new System.Drawing.Point(12, 102);
+            this.openBut.Location = new System.Drawing.Point(12, 330);
             this.openBut.Name = "openBut";
             this.openBut.Size = new System.Drawing.Size(75, 23);
             this.openBut.TabIndex = 2;
@@ -65,7 +65,7 @@
             // 
             // saveBut
             // 
-            this.saveBut.Location = new System.Drawing.Point(461, 102);
+            this.saveBut.Location = new System.Drawing.Point(461, 330);
             this.saveBut.Name = "saveBut";
             this.saveBut.Size = new System.Drawing.Size(75, 23);
             this.saveBut.TabIndex = 3;
@@ -79,14 +79,14 @@
             this.panel1.Controls.Add(this.imageBox);
             this.panel1.Location = new System.Drawing.Point(12, 12);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(524, 84);
+            this.panel1.Size = new System.Drawing.Size(524, 312);
             this.panel1.TabIndex = 5;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(542, 132);
+            this.ClientSize = new System.Drawing.Size(542, 359);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.saveBut);
             this.Controls.Add(this.openBut);

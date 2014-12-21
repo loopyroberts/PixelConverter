@@ -12,6 +12,7 @@ namespace ImgToMatrix
 {
     public partial class Form1 : Form
     {
+        const int IMGHEIGHT = 288;
         Bitmap bmp;
         Image image;
         public Form1()
@@ -25,7 +26,7 @@ namespace ImgToMatrix
             if (fd.ShowDialog().Equals(DialogResult.OK))
             {
                 image = Image.FromFile(fd.FileName);
-                bmp = new Bitmap(image, image.Width, 60);
+                bmp = new Bitmap(image, image.Width, IMGHEIGHT);
                 imageBox.Width = image.Width;
                 imageBox.Image = image;
             }
@@ -45,12 +46,12 @@ namespace ImgToMatrix
                 {
                     System.IO.FileStream fs = new System.IO.FileStream(sv.FileName, System.IO.FileMode.Create, System.IO.FileAccess.Write);
 
-                    byte[] buf = new byte[180];
+                    byte[] buf = new byte[IMGHEIGHT*3];
                     for (int i = 0; i < bmp.Width; i++)
                     {
 
                         //writer.Write("{");
-                        for (int j = 0; j < 60; j++)
+                        for (int j = 0; j < IMGHEIGHT; j++)
                         {
                             //writer.Write("{");
 
@@ -61,7 +62,7 @@ namespace ImgToMatrix
                             buf[3 * j + 2] = bmp.GetPixel(i, j).B;
                             //writer.Write("},");
                         }
-                        fs.Write(buf, 0, 180);
+                        fs.Write(buf, 0, IMGHEIGHT*3);
                     }
                     //writer.Write("};");
                     fs.Close();

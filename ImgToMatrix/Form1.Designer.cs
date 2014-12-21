@@ -33,6 +33,7 @@
             this.openBut = new System.Windows.Forms.Button();
             this.saveBut = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.heightBox = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.imageBox)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -47,9 +48,9 @@
             // 
             // nameBox
             // 
-            this.nameBox.Location = new System.Drawing.Point(93, 331);
+            this.nameBox.Location = new System.Drawing.Point(93, 332);
             this.nameBox.Name = "nameBox";
-            this.nameBox.Size = new System.Drawing.Size(362, 20);
+            this.nameBox.Size = new System.Drawing.Size(283, 20);
             this.nameBox.TabIndex = 1;
             this.nameBox.Text = "image.pix";
             // 
@@ -65,7 +66,7 @@
             // 
             // saveBut
             // 
-            this.saveBut.Location = new System.Drawing.Point(461, 330);
+            this.saveBut.Location = new System.Drawing.Point(382, 330);
             this.saveBut.Name = "saveBut";
             this.saveBut.Size = new System.Drawing.Size(75, 23);
             this.saveBut.TabIndex = 3;
@@ -82,11 +83,25 @@
             this.panel1.Size = new System.Drawing.Size(524, 312);
             this.panel1.TabIndex = 5;
             // 
+            // heightBox
+            // 
+            this.heightBox.FormattingEnabled = true;
+            this.heightBox.Items.AddRange(new object[] {
+            "288",
+            "60"});
+            this.heightBox.Location = new System.Drawing.Point(463, 331);
+            this.heightBox.Name = "heightBox";
+            this.heightBox.Size = new System.Drawing.Size(73, 21);
+            this.heightBox.TabIndex = 6;
+            this.heightBox.Text = "288";
+            this.heightBox.SelectedIndexChanged += new System.EventHandler(this.heightBox_SelectedIndexChanged);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(542, 359);
+            this.ClientSize = new System.Drawing.Size(546, 359);
+            this.Controls.Add(this.heightBox);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.saveBut);
             this.Controls.Add(this.openBut);
@@ -107,6 +122,7 @@
         private System.Windows.Forms.Button openBut;
         private System.Windows.Forms.Button saveBut;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.ComboBox heightBox;
     }
 }
 

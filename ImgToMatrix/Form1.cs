@@ -12,7 +12,7 @@ namespace ImgToMatrix
 {
     public partial class Form1 : Form
     {
-        const int IMGHEIGHT = 288;
+        int IMGHEIGHT = 288;
         Bitmap bmp;
         Image image;
         public Form1()
@@ -68,6 +68,19 @@ namespace ImgToMatrix
                     fs.Close();
                 }
             }
+        }
+
+        private void heightBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            IMGHEIGHT = Convert.ToInt32(heightBox.Text);
+            imageBox.Height = IMGHEIGHT;
+            panel1.Height = IMGHEIGHT + 24;
+            Form1.ActiveForm.Height = IMGHEIGHT + 110;
+            openBut.Location = new Point(openBut.Location.X, IMGHEIGHT + 42);
+            nameBox.Location = new Point(nameBox.Location.X, IMGHEIGHT + 44);
+            saveBut.Location = new Point(saveBut.Location.X, IMGHEIGHT + 42);
+            heightBox.Location = new Point(heightBox.Location.X, IMGHEIGHT + 43);
+
         }
     }
 }

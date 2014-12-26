@@ -40,6 +40,7 @@ namespace ImgToMatrix
             }
             else
             {
+                
                 SaveFileDialog sv = new SaveFileDialog();
                 sv.FileName = nameBox.Text;
                 if (sv.ShowDialog() == DialogResult.OK)
@@ -55,11 +56,11 @@ namespace ImgToMatrix
                         {
                             //writer.Write("{");
 
-                            buf[3 * j] = bmp.GetPixel(i, j).R;
+                            buf[3 * j] = gamma((byte)(bmp.GetPixel(i, j).R * 0.75));
                             //writer.Write(",");
-                            buf[3 * j + 1] = bmp.GetPixel(i, j).G;
+                            buf[3 * j + 1] = gamma(bmp.GetPixel(i, j).G);
                             //writer.Write(",");
-                            buf[3 * j + 2] = bmp.GetPixel(i, j).B;
+                            buf[3 * j + 2] = gamma(bmp.GetPixel(i, j).B);
                             //writer.Write("},");
                         }
                         fs.Write(buf, 0, IMGHEIGHT*3);
@@ -80,7 +81,27 @@ namespace ImgToMatrix
             nameBox.Location = new Point(nameBox.Location.X, IMGHEIGHT + 44);
             saveBut.Location = new Point(saveBut.Location.X, IMGHEIGHT + 42);
             heightBox.Location = new Point(heightBox.Location.X, IMGHEIGHT + 43);
+            gammaBox.Location = new Point(gammaBox.Location.X, IMGHEIGHT + 44);
+            gammaLab.Location = new Point(gammaLab.Location.X, IMGHEIGHT + 47);
 
+        }
+
+        private byte gamma(byte g0)
+        {
+            double gamma = Convert.ToDouble(gammaBox.Text);
+            return (byte)(Math.Pow(g0,gamma)*255/(Math.Pow(255.0,gamma)));
+        }
+
+        private void gammaBox_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                Convert.ToDouble(gammaBox.Text);
+            }
+            catch(FormatException ex)
+            {
+                MessageBox.Show("Must be a decimal value");
+            }
         }
     }
 }

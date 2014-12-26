@@ -34,6 +34,8 @@
             this.saveBut = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.heightBox = new System.Windows.Forms.ComboBox();
+            this.gammaBox = new System.Windows.Forms.TextBox();
+            this.gammaLab = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.imageBox)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -48,9 +50,9 @@
             // 
             // nameBox
             // 
-            this.nameBox.Location = new System.Drawing.Point(93, 332);
+            this.nameBox.Location = new System.Drawing.Point(177, 332);
             this.nameBox.Name = "nameBox";
-            this.nameBox.Size = new System.Drawing.Size(283, 20);
+            this.nameBox.Size = new System.Drawing.Size(199, 20);
             this.nameBox.TabIndex = 1;
             this.nameBox.Text = "image.pix";
             // 
@@ -96,15 +98,35 @@
             this.heightBox.Text = "288";
             this.heightBox.SelectedIndexChanged += new System.EventHandler(this.heightBox_SelectedIndexChanged);
             // 
+            // gammaBox
+            // 
+            this.gammaBox.Location = new System.Drawing.Point(142, 332);
+            this.gammaBox.Name = "gammaBox";
+            this.gammaBox.Size = new System.Drawing.Size(29, 20);
+            this.gammaBox.TabIndex = 1;
+            this.gammaBox.Text = "2.4";
+            this.gammaBox.TextChanged += new System.EventHandler(this.gammaBox_TextChanged);
+            // 
+            // gammaLab
+            // 
+            this.gammaLab.AutoSize = true;
+            this.gammaLab.Location = new System.Drawing.Point(93, 335);
+            this.gammaLab.Name = "gammaLab";
+            this.gammaLab.Size = new System.Drawing.Size(43, 13);
+            this.gammaLab.TabIndex = 7;
+            this.gammaLab.Text = "Gamma";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(546, 359);
+            this.Controls.Add(this.gammaLab);
             this.Controls.Add(this.heightBox);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.saveBut);
             this.Controls.Add(this.openBut);
+            this.Controls.Add(this.gammaBox);
             this.Controls.Add(this.nameBox);
             this.Name = "Form1";
             this.Text = "Pixel Stick formatter";
@@ -123,6 +145,8 @@
         private System.Windows.Forms.Button saveBut;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.ComboBox heightBox;
+        private System.Windows.Forms.TextBox gammaBox;
+        private System.Windows.Forms.Label gammaLab;
     }
 }
 
